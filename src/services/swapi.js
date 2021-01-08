@@ -14,14 +14,14 @@ export default class SwapiService {
      * data_type = 'people' || 'planets' || 'starships'
      */
     getData = async (data_type, id) => {
-        const data = await this.getResource(`${this._apiUrl}/${data_type}/${id}/`).catch((error) => console.error(error))
+        const data = await this.getResource(`${this._apiUrl}/${data_type}/${id}/`)
         switch (data_type) {
             case 'people':
-                return this._transformPeople(data, id)
+                return this._transformPeople(data)
             case 'planets':
-                return this._transformPlanet(data, id)
+                return this._transformPlanet(data)
             case 'starships':
-                return this._transformStarship(data, id)
+                return this._transformStarship(data)
             default:
                 return null
         }
@@ -32,11 +32,11 @@ export default class SwapiService {
         return data.results.map(data_obj => {
             switch (data_type) {
                 case 'people':
-                    return this._transformPeople(data_obj, data_obj.name)
+                    return this._transformPeople(data_obj)
                 case 'planets':
-                    return this._transformPlanet(data_obj, data_obj.name)
+                    return this._transformPlanet(data_obj)
                 case 'starships':
-                    return this._transformStarship(data_obj, data_obj.name)
+                    return this._transformStarship(data_obj)
                 default:
                     return null
             }
@@ -48,7 +48,7 @@ export default class SwapiService {
      */
     getAllData = async (data_type) => {
         const array = []
-        let data = await this.getResource(`${this._apiUrl}/${data_type}/`).catch((error) => console.error(error))
+        let data = await this.getResource(`${this._apiUrl}/${data_type}/`)
         array.push(...this.dataTransform(data_type, data))
         while (!!data.next) {
             data = await this.getResource(data.next)
@@ -63,34 +63,40 @@ export default class SwapiService {
     }
 
     _transformPeople = (data) => {
-        return {
-            id: this._extractId(data),
-            name: data.name,
-            gender: data.gender,
-            birth_year: data.birth_year,
-            eye_color: data.eye_color,
-        }
+        if (data)
+            return {
+                id: this._extractId(data),
+                name: data.name,
+                gender: data.gender,
+                birth_year: data.birth_year,
+                eye_color: data.eye_color,
+            }
+        return {}
     }
     _transformStarship = (data) => {
-        return {
-            id: this._extractId(data),
-            name: data.name,
-            model: data.model,
-            manufacturer: data.manufacturer,
-            cost_in_credits: data.cost_in_credits,
-            length: data.length,
-            crew: data.crew,
-            passengers: data.passengers,
-            cargo_capacity: data.cargo_capacity
-        }
+        if (data)
+            return {
+                id: this._extractId(data),
+                name: data.name,
+                model: data.model,
+                manufacturer: data.manufacturer,
+                cost_in_credits: data.cost_in_credits,
+                length: data.length,
+                crew: data.crew,
+                passengers: data.passengers,
+                cargo_capacity: data.cargo_capacity
+            }
+        return {}
     }
     _transformPlanet = (data) => {
-        return {
-            id: this._extractId(data),
-            name: data.name,
-            population: data.population,
-            rotation_period: data.rotation_period,
-            diameter: data.diameter,
-        }
+        if (data)
+            return {
+                id: this._extractId(data),
+                name: data.name,
+                population: data.population,
+                rotation_period: data.rotation_period,
+                diameter: data.diameter,
+            }
+        return {}
     }
 }
