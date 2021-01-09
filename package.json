@@ -13,7 +13,7 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "http://slavaider.github.io/star_db",
+  "homepage": "http://slavaider.github.io/star_db/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
