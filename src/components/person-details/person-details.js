@@ -29,7 +29,6 @@ export default class PersonDetails extends Component {
         this.updatePerson()
     }
 
-
     render() {
         const {
             person: {
@@ -40,7 +39,6 @@ export default class PersonDetails extends Component {
             }
         } = this.state;
         return (
-            <div className="col-md-6">
                 <div className="person-details card">
                     {!this.state.loading ?
                         <React.Fragment>
@@ -67,7 +65,6 @@ export default class PersonDetails extends Component {
                             </div>
                         </React.Fragment> : <Spinner/>}
                 </div>
-            </div>
         )
     }
 }

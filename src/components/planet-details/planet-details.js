@@ -40,33 +40,31 @@ export default class PlanetDetails extends Component {
             }
         } = this.state;
         return (
-            <div className="col-md-6">
-                <div className="planet-details card">
-                    {!this.state.loading ?
-                        <React.Fragment>
-                            <img className="planet-image"
-                                 src={`https://starwars-visualguide.com/assets/img/planets/${this.props.match.params.id}.jpg`}
-                                 onError={(event) => event.target.style.display = "none"}
-                                 alt='Planet: 404 not found'/>
-                            <div className="card-body">
-                                <h4>{name}</h4>
-                                <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">
-                                        <span className="term">Population</span>
-                                        <span>{population}</span>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <span className="term">Rotation Period</span>
-                                        <span>{rotation_period}</span>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <span className="term">Diameter</span>
-                                        <span>{diameter}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </React.Fragment> : <Spinner/>}
-                </div>
+            <div className="planet-details card">
+                {!this.state.loading ?
+                    <React.Fragment>
+                        <img className="planet-image"
+                             src={`https://starwars-visualguide.com/assets/img/planets/${this.props.match.params.id}.jpg`}
+                             onError={(event) => event.target.style.display = "none"}
+                             alt='Planet: 404 not found'/>
+                        <div className="card-body">
+                            <h4>{name}</h4>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">
+                                    <span className="term">Population</span>
+                                    <span>{population}</span>
+                                </li>
+                                <li className="list-group-item">
+                                    <span className="term">Rotation Period</span>
+                                    <span>{rotation_period}</span>
+                                </li>
+                                <li className="list-group-item">
+                                    <span className="term">Diameter</span>
+                                    <span>{diameter}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </React.Fragment> : <Spinner/>}
             </div>
         )
     }

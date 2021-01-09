@@ -44,7 +44,6 @@ export default class StarShipDetails extends Component {
             }
         } = this.state;
         return (
-            <div className="col-md-6">
                 <div className="starship-details card">
                     {!this.state.loading ?
                         <React.Fragment>
@@ -86,7 +85,6 @@ export default class StarShipDetails extends Component {
                                 </ul>
                             </div>
                         </React.Fragment> : <Spinner/>}
-                </div>
             </div>
         )
     }

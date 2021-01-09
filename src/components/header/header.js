@@ -28,6 +28,12 @@ const Header = () => {
                         Starships
                     </NavLink>
                 </li>
+                <li>
+                    <a href='https://github.com/slavaider'>
+                        <i className='fa fa-github'/>&nbsp;
+                        Slavaider
+                    </a>
+                </li>
             </ul>
         </div>
     );

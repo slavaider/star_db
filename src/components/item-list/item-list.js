@@ -91,7 +91,7 @@ class ItemList extends Component {
                                         </li>)
                                 })
                             }
-                            <ul className="pagination pagination-md mt-2 justify-content-center">
+                            <ul className="pagination pagination-md mt-2 mb-2 justify-content-center">
                                 <li className="page-item">
                                     <button onClick={() => this.Prev()} className="page-link">&lt;</button>
                                 </li>

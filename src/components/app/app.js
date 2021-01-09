@@ -11,13 +11,7 @@ import PersonDetails from "../person-details";
 import PlanetDetails from "../planet-details/planet-details";
 
 
-class App extends React.Component {
-    state = {
-        flag: false,
-        id: 2
-    }
-
-    render() {
+function App() {
         return (
             <div className='container-fluid'>
                 <Header/>
@@ -27,16 +21,16 @@ class App extends React.Component {
                         <Route path={["/starships/:id", "/people/:id", "/planets/:id"]} component={ItemList}/>
                         <Redirect from={'*'} to={`/people/1`}/>
                     </Switch>
+                    <div className="col-md-6">
                     <Switch>
                         <Route path='/starships/:id' component={StarShipDetails}/>
                         <Route path='/people/:id' component={PersonDetails}/>
                         <Route path='/planets/:id' component={PlanetDetails}/>
                     </Switch>
+                    </div>
                 </div>
             </div>
         );
-    }
-
 }
 
 export default App;
