@@ -32,7 +32,7 @@ class ItemList extends Component {
     }
 
     Choose = (id) => {
-        this.props.history.push(`/${this.props.match.path.match(/\/([a-z]*)\//)[1]}/${id}`)
+        this.props.history.push(`/star_db/${this.props.match.path.match(/\/([a-z]*)\//)[1]}/${id}`)
     }
     changePage = (event) => {
         this.setState({
