@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/star_db/static/css/main.26a34b78.chunk.css",
-    "main.js": "/star_db/static/js/main.3a8f5b23.chunk.js",
-    "main.js.map": "/star_db/static/js/main.3a8f5b23.chunk.js.map",
-    "runtime-main.js": "/star_db/static/js/runtime-main.cf8c03d3.js",
-    "runtime-main.js.map": "/star_db/static/js/runtime-main.cf8c03d3.js.map",
-    "static/css/2.0166a910.chunk.css": "/star_db/static/css/2.0166a910.chunk.css",
-    "static/js/2.e1e422aa.chunk.js": "/star_db/static/js/2.e1e422aa.chunk.js",
-    "static/js/2.e1e422aa.chunk.js.map": "/star_db/static/js/2.e1e422aa.chunk.js.map",
-    "index.html": "/star_db/index.html",
-    "static/css/2.0166a910.chunk.css.map": "/star_db/static/css/2.0166a910.chunk.css.map",
-    "static/css/main.26a34b78.chunk.css.map": "/star_db/static/css/main.26a34b78.chunk.css.map",
-    "static/js/2.e1e422aa.chunk.js.LICENSE.txt": "/star_db/static/js/2.e1e422aa.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.css": "/star_db/static/media/fontawesome-webfont.f691f37e.woff"
+    "main.css": "/star_db/people/1/static/css/main.26a34b78.chunk.css",
+    "main.js": "/star_db/people/1/static/js/main.3a8f5b23.chunk.js",
+    "main.js.map": "/star_db/people/1/static/js/main.3a8f5b23.chunk.js.map",
+    "runtime-main.js": "/star_db/people/1/static/js/runtime-main.fab6b2a7.js",
+    "runtime-main.js.map": "/star_db/people/1/static/js/runtime-main.fab6b2a7.js.map",
+    "static/css/2.bafd5fb8.chunk.css": "/star_db/people/1/static/css/2.bafd5fb8.chunk.css",
+    "static/js/2.e1e422aa.chunk.js": "/star_db/people/1/static/js/2.e1e422aa.chunk.js",
+    "static/js/2.e1e422aa.chunk.js.map": "/star_db/people/1/static/js/2.e1e422aa.chunk.js.map",
+    "index.html": "/star_db/people/1/index.html",
+    "static/css/2.bafd5fb8.chunk.css.map": "/star_db/people/1/static/css/2.bafd5fb8.chunk.css.map",
+    "static/css/main.26a34b78.chunk.css.map": "/star_db/people/1/static/css/main.26a34b78.chunk.css.map",
+    "static/js/2.e1e422aa.chunk.js.LICENSE.txt": "/star_db/people/1/static/js/2.e1e422aa.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/star_db/people/1/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf8c03d3.js",
-    "static/css/2.0166a910.chunk.css",
+    "static/js/runtime-main.fab6b2a7.js",
+    "static/css/2.bafd5fb8.chunk.css",
     "static/js/2.e1e422aa.chunk.js",
     "static/css/main.26a34b78.chunk.css",
     "static/js/main.3a8f5b23.chunk.js"
