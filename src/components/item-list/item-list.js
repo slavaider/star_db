@@ -17,7 +17,12 @@ class ItemList extends Component {
     updateItems = () => {
         this.setState({loading: true});
         this.swapi.getAllData(this.props.match.path.match(/\/([a-z]*)\//)[1]).then(data => {
-            this.setState({index: 0, items: data, loading: false, max: Math.ceil(data.length / this.state.step)});
+            this.setState({
+                index: 0,
+                items: data.sort((a, b) => a.id - b.id),
+                loading: false,
+                max: Math.ceil(data.length / this.state.step)
+            });
         })
     }
 
@@ -32,7 +37,7 @@ class ItemList extends Component {
     }
 
     Choose = (id) => {
-        this.props.history.push(`/star_db/${this.props.match.path.match(/\/([a-z]*)\//)[1]}/${id}`)
+        this.props.history.push(`/${this.props.match.path.match(/\/([a-z]*)\//)[1]}/${id}`)
     }
     changePage = (event) => {
         this.setState({

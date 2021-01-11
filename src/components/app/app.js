@@ -10,8 +10,6 @@ import StarShipDetails from "../starship-details/starship-details";
 import PersonDetails from "../person-details";
 import PlanetDetails from "../planet-details/planet-details";
 
-const repo_name = 'star_db'
-
 function App() {
     return (
         <div className='container-fluid'>
@@ -20,15 +18,15 @@ function App() {
             <div className="row mb2">
                 <Switch>
                     <Route
-                        path={[`/${repo_name}/starships/:id`, `/${repo_name}/people/:id`, `/${repo_name}/planets/:id`]}
+                        path={[`/starships/:id`, `/people/:id`, `/planets/:id`]}
                         component={ItemList}/>
-                    <Redirect from={'*'} to={`/${repo_name}/people/1`}/>
+                    <Redirect from={'*'} to={`/people/1`}/>
                 </Switch>
                 <div className="col-md-6">
                     <Switch>
-                        <Route path={`/${repo_name}/starships/:id`} component={StarShipDetails}/>
-                        <Route path={`/${repo_name}/people/:id`} component={PersonDetails}/>
-                        <Route path={`/${repo_name}/planets/:id`} component={PlanetDetails}/>
+                        <Route path={`/starships/:id`} component={StarShipDetails}/>
+                        <Route path={`/people/:id`} component={PersonDetails}/>
+                        <Route path={`/planets/:id`} component={PlanetDetails}/>
                     </Switch>
                 </div>
             </div>
