@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ItemList from '../item-list';
-
 import './app.css';
 import {Redirect, Route, Switch} from "react-router-dom";
 import StarShipDetails from "../starship-details/starship-details";
@@ -19,7 +18,8 @@ function App() {
                 <Switch>
                     <Route
                         path={[`/starships/:id`, `/people/:id`, `/planets/:id`]}
-                        component={ItemList}/>
+                        component={ItemList}
+                    />
                     <Redirect from={'*'} to={`/people/1`}/>
                 </Switch>
                 <div className="col-md-6">
