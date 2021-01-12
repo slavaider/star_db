@@ -8,9 +8,12 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import StarShipDetails from "../starship-details/starship-details";
 import PersonDetails from "../person-details";
 import PlanetDetails from "../planet-details/planet-details";
+import {SwapiServiceProvider} from "../swapi-service-context";
+import swapi from "../../services/swapi";
 
 function App() {
     return (
+        <SwapiServiceProvider value={swapi}>
         <div className='container-fluid'>
             <Header/>
             <RandomPlanet/>
@@ -31,6 +34,7 @@ function App() {
                 </div>
             </div>
         </div>
+        </SwapiServiceProvider>
     );
 }
 

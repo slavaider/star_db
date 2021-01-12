@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 import './item-list.css';
-import SwapiService from "../../services/swapi";
 import {withRouter} from "react-router-dom";
 import Spinner from "../spinner";
+import {withSwapi} from "../../hoc/with-swapi";
 
 class ItemList extends Component {
-    swapi = new SwapiService()
+    swapi =  this.props.swapi
     state = {
         items: [],
         loading: true,
@@ -108,8 +108,9 @@ class ItemList extends Component {
                         </React.Fragment> : <Spinner/>}
                 </ul>
             </div>
+
         );
     }
 }
 
-export default withRouter(ItemList)
+export default withSwapi(withRouter(ItemList))

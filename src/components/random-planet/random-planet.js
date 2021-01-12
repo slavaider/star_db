@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 
 import './random-planet.css';
-import SwapiService from "../../services/swapi";
-import Spinner from "../spinner";
 
-export default class RandomPlanet extends Component {
-    swapi = new SwapiService()
+import Spinner from "../spinner";
+import {withSwapi} from "../../hoc/with-swapi";
+
+class RandomPlanet extends Component {
+    swapi =  this.props.swapi
     state = {
         planet: {},
         loading: true,
@@ -81,3 +82,4 @@ const PlanetView = ({planet}) => {
         </React.Fragment>
     );
 };
+export default withSwapi(RandomPlanet)

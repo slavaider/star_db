@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 import './person-details.css';
-import SwapiService from "../../services/swapi";
+
 import Spinner from "../spinner";
+import {withSwapi} from "../../hoc/with-swapi";
 
-export default class PersonDetails extends Component {
-    swapi = new SwapiService()
-
+class PersonDetails extends Component {
+    swapi =  this.props.swapi
     state = {
         person: {},
         loading: true,
@@ -68,3 +68,4 @@ export default class PersonDetails extends Component {
         )
     }
 }
+export default withSwapi(PersonDetails)
