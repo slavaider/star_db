@@ -1,6 +1,6 @@
 export default class SwapiService {
 
-    _apiUrl = 'https://www.swapi.tech/api'
+    _apiUrl = 'https://swapi.dev/api'
 
     getResource = async (url) => {
         const response = await fetch(url)
@@ -17,11 +17,11 @@ export default class SwapiService {
         const data = await this.getResource(`${this._apiUrl}/${data_type}/${id}/`)
         switch (data_type) {
             case 'people':
-                return this._transformPeople(data.result.properties);
+                return this._transformPeople(data)
             case 'planets':
-                return this._transformPlanet(data.result.properties)
+                return this._transformPlanet(data)
             case 'starships':
-                return this._transformStarship(data.result.properties)
+                return this._transformStarship(data)
             default:
                 return null
         }
@@ -32,11 +32,11 @@ export default class SwapiService {
         return data.results.map(data_obj => {
             switch (data_type) {
                 case 'people':
-                    return {id: data_obj.uid, name: data_obj.name};
+                    return this._transformPeople(data_obj)
                 case 'planets':
-                    return {id: data_obj.uid, name: data_obj.name};
+                    return this._transformPlanet(data_obj)
                 case 'starships':
-                    return {id: data_obj.uid, name: data_obj.name};
+                    return this._transformStarship(data_obj)
                 default:
                     return null
             }
@@ -58,7 +58,7 @@ export default class SwapiService {
     }
 
     _extractId(item) {
-        const regex = /([1-9]*$)/
+        const regex = /\/([0-9]*)\/$/
         return item.url.match(regex)[1]
     }
 
@@ -100,3 +100,4 @@ export default class SwapiService {
         return {}
     }
 }
+
